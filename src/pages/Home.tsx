@@ -1,7 +1,9 @@
+import MonthNavigation from "../components/MonthNavigation";
+
 const Home = () => {
   return (
-    <main className="container max-w-3xl">
-      <div className="w-[100px] h-[100px] bg-red-600"></div>
+    <main className="max-w-[800px] w-full flex flex-col gap-5 justify-center items-center">
+      <MonthNavigation />
     </main>
   );
 };
