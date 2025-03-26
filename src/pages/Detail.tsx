@@ -71,7 +71,7 @@ const Detail = () => {
   if (error) return <p>오류 발생: {error.message}</p>;
 
   return (
-    <div className="max-w-[800px] mx-auto border rounded-lg p-5 items-start text-start">
+    <div className="max-w-[800px] w-[800px] mx-auto border rounded-lg p-5 items-start text-start">
       <form onSubmit={handleUpdate}>
         <div className="flex flex-col mb-2.5">
           <label>날짜</label>
@@ -79,7 +79,7 @@ const Detail = () => {
             value={date}
             type="text"
             placeholder="YYYY-MM-DD"
-            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300 text-gray-400"
+            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300"
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
@@ -89,7 +89,7 @@ const Detail = () => {
             value={item}
             type="text"
             placeholder="지출 항목"
-            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300 text-gray-400"
+            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300"
             onChange={(e) => setItem(e.target.value)}
           />
         </div>
@@ -99,7 +99,7 @@ const Detail = () => {
             value={amount}
             type="number"
             placeholder=""
-            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300 text-gray-400"
+            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300"
             onChange={(e) => setAmount(Number(e.target.value))}
           />
         </div>
@@ -109,7 +109,7 @@ const Detail = () => {
             value={description}
             type="text"
             placeholder="지출 내용"
-            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300 text-gray-400"
+            className="p-2.5 border rounded-[4px] text-[14px] border-gray-300"
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>

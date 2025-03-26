@@ -1,15 +1,23 @@
 import { Link } from "react-router";
 import { useExpense } from "../queries/useSupabase";
+import { useMonthStore } from "../store/monthStore";
 
 const ExpenseList = () => {
   const { data: expense, isLoading, error } = useExpense();
+  const { selectMonth } = useMonthStore();
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <p>Error: {error.message}</p>;
+
+  const filterExpense = selectMonth
+    ? expense?.filter(
+        (item) => new Date(item.date).getMonth() + 1 === selectMonth
+      )
+    : expense;
   return (
     <section className="rounded-2xl border shadow-lg p-5 ">
       <div className="flex flex-col gap-[10px]">
-        {expense?.map((item) => {
+        {filterExpense?.map((item) => {
           return (
             <Link
               to={`/detail/${item.id}`}
