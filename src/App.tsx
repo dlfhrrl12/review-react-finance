@@ -1,10 +1,13 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Router from "./router/Router";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="container flex flex-col justify-center p-8 text-center mx-auto">
+    <QueryClientProvider client={queryClient}>
       <Router />
-    </div>
+    </QueryClientProvider>
   );
 }
 

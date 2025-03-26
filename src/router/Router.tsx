@@ -5,10 +5,12 @@ import Detail from "../pages/Detail";
 const Router = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/detail/:id"} element={<Detail />} />
-      </Routes>
+      <div className="container flex flex-col justify-center p-8 text-center mx-auto">
+        <Routes>
+          <Route path={"/"} element={<Home />} />
+          <Route path={"/detail/:id"} element={<Detail />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
